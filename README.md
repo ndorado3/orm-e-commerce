@@ -86,10 +86,10 @@ npm install dotenv
 - JavaScript
 - Node.js
 - Express.js
-- Insomnia Core:[Insomnia Core](https://insomnia.rest/products/insomnia)
-- MySQL2:[MySQL2](https://www.npmjs.com/package/mysql2)
-- Sequelize:[Sequelize](https://www.npmjs.com/package/sequelize)
-- dotenv:[dotenv](https://www.npmjs.com/package/dotenv)
+- Insomnia Core: [Insomnia Core](https://insomnia.rest/products/insomnia)
+- MySQL2: [MySQL2](https://www.npmjs.com/package/mysql2)
+- Sequelize: [Sequelize](https://www.npmjs.com/package/sequelize)
+- dotenv: [dotenv](https://www.npmjs.com/package/dotenv)
 
 ## Usage
 
