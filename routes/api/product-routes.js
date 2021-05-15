@@ -22,14 +22,15 @@ router.get("/", async (req, res) => {
 // includes its associated Category and Tag data
 router.get("/:id", async (req, res) => {
   try {
-    const productData = await Product.findByPK(req.params.id, {
-      include: [{ model: Category }, { model: Tag }],
+    const productData = await Product.findOne({
+      include: [Category, { model: Tag, through: ProductTag }],
+      where: { id: req.params.id },
     });
     if (!productData) {
-      res.status(404).json({ message: "Sorry No category found with this id" });
+      res.status(404).json({ message: "Sorry No product found with this id" });
       return;
     }
-    res.status(200).json(categoryData);
+    res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -42,7 +43,8 @@ router.post("/", (req, res) => {
       product_name: "Basketball",
       price: 200.00,
       stock: 3,
-      tagIds: [1, 2, 3, 4]
+      tagIds: [1, 2, 3, 4],
+      category_id: 3
     }
   */
   Product.create(req.body)
