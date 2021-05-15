@@ -109,6 +109,11 @@ npm install dotenv
 ```bash
 node server.js
 ```
+2. Create a .env file and put your credentials in it:
+
+![.env file example](./Assets/env.png)
+
+
 
 ### Database Models
 
