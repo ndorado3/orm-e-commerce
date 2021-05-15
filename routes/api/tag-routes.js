@@ -69,10 +69,11 @@ router.delete("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-  }).then((deleteTag)=>{
-    res.json(deleteTag);
   })
-  .catch((err) => res.json(err));
+    .then((deleteTag) => {
+      res.json(deleteTag);
+    })
+    .catch((err) => res.json(err));
 });
 
 module.exports = router;
