@@ -79,7 +79,8 @@ npm install dotenv
 ```
 
 - The package.json file should like the image below:
-  ![package.json with dependencies](./Assets/json.png)
+
+![package.json with dependencies](./Assets/json.png)
 
 ## Technology
 
@@ -111,7 +112,8 @@ The following video shows how the application is being tested in Postman:
 
 ![.env file example](./Assets/env.png)
 
-2. Check that MySQL server is running 
+2. Check that MySQL server is running.
+
 ![MySQL server running](./Assets/serverOn.png)
 
 - Create the schema from MySQL shell and seed the database from the terminal:
@@ -120,7 +122,8 @@ The following video shows how the application is being tested in Postman:
 ```bash
 mysql -u root -p 
 ```
-2. Create the database 
+2. Create the database.
+
 ![creating the db](./Assets/db.png)
 
 3. Seed the database by running the command below 
