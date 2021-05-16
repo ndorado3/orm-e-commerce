@@ -24,9 +24,9 @@ WHEN I enter schema and seed commands
 THEN a development database is created and is seeded with test data
 WHEN I enter the command to invoke the application
 THEN my server is started and the Sequelize models are synced to the MySQL database
-WHEN I open API GET routes in Insomnia Core for categories, products, or tags
+WHEN I open API GET routes in Postman for categories, products, or tags
 THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
+WHEN I test API POST, PUT, and DELETE routes in Postman
 THEN I am able to successfully create, update, and delete data in my database
 ```
 
@@ -86,38 +86,59 @@ npm install dotenv
 - JavaScript
 - Node.js
 - Express.js
-- Insomnia Core: [Insomnia Core](https://insomnia.rest/products/insomnia)
+- Postman: [Postman](https://www.postman.com/)
 - MySQL2: [MySQL2](https://www.npmjs.com/package/mysql2)
 - Sequelize: [Sequelize](https://www.npmjs.com/package/sequelize)
 - dotenv: [dotenv](https://www.npmjs.com/package/dotenv)
 
 ## Usage
+The following video shows how the application is being tested in Postman:
 
-- The following video shows how the application works in Insomnia Core:
+1. Creating the schema from MySQL shell and seed the database from the terminal. 
+2. The application's GET routes to return ALL categories, all products, and all tags being tested.
+3. The application's GET routes to return a SINGLE category, a single product, and a single tag being tested.
+4. The application's POST, PUT, and DELETE routes for categories, products and tags being tested.
 
-1. The application's GET routes to return all categories, all products, and all tags being tested in Insomnia Core.
-2. The application's GET routes to return a single category, a single product, and a single tag being tested in Insomnia Core.
-3. The application's POST, PUT, and DELETE routes for categories being tested in Insomnia Core
-4. The application's POST, PUT, and DELETE routes for products and tags being tested in Insomnia Core.
 
 ![In Insomnia Core, the user tests “GET tags,” “GET Categories,” and “GET All Products.”.](./Assets/13-orm-homework-demo-01.gif)
 
-### Steps to start the application
+### Steps to set up the application for testing 
 
+- Creating the connection: 
+
+1. Create a .env file and put your credentials in it. 
+
+![.env file example](./Assets/env.png)
+
+2. Check that MySQL server is running 
+![MySQL server running](./Assets/serverOn.png)
+
+- Create the schema from MySQL shell and seed the database from the terminal:
+
+1. Run the command below 
+```bash
+mysql -u root -p 
+```
+2. Create the database 
+![creating the db](./Assets/db.png)
+
+3. Seed the database by running the command below 
+```bash
+npm run seed
+```
+
+- To generate the application:
 1. Run the following command in the terminal:
 
 ```bash
 node server.js
 ```
-2. Create a .env file and put your credentials in it:
-
-![.env file example](./Assets/env.png)
-
+- The application is ready to be tested in Postman
 
 
 ### Database Models
 
-The database contains the following four models, including the requirements listed for each model:
+This database contains the following four models, including the requirements listed for each model:
 
 - `Category`
 
@@ -221,21 +242,11 @@ The database contains the following four models, including the requirements list
 
 ### Associations
 
-You'll need to execute association methods on your Sequelize models to create the following relationships between them:
+This application models has the following relationships between them:
 
 - `Product` belongs to `Category`, and `Category` has many `Product` models, as a category can have multiple products but a product can only belong to one category.
 
 - `Product` belongs to many `Tag` models, and `Tag` belongs to many `Product` models. Allow products to have multiple tags and tags to have many products by using the `ProductTag` through model.
-
-> **Hint:** Make sure you set up foreign key relationships that match the column we created in the respective models.
-
-### Fill Out the API Routes to Perform RESTful CRUD Operations
-
-Fill out the unfinished routes in `product-routes.js`, `tag-routes.js`, and `category-routes.js` to perform create, read, update, and delete operations using your Sequelize models.
-
-Note that the functionality for creating the many-to-many relationship for products has already been completed for you.
-
-> **Hint**: Be sure to look at the mini-project code for syntax help and use your model's column definitions to figure out what `req.body` will be for POST and PUT routes!
 
 ### Seed the Database
 
