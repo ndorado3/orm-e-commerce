@@ -100,7 +100,8 @@ The following video shows how the application is being tested in Postman:
 4. The application's POST, PUT, and DELETE routes for categories, products and tags being tested.
 
 
-![In Insomnia Core, the user tests “GET tags,” “GET Categories,” and “GET All Products.”.](./Assets/13-orm-homework-demo-01.gif)
+[Walkthrough video that demonstrates the functionality of the application.](https://vimeo.com/549755100)
+ - https://vimeo.com/549755100
 
 ### Steps to set up the application for testing 
 
@@ -248,14 +249,6 @@ This application models has the following relationships between them:
 
 - `Product` belongs to many `Tag` models, and `Tag` belongs to many `Product` models. Allow products to have multiple tags and tags to have many products by using the `ProductTag` through model.
 
-### Seed the Database
-
-After creating the models and routes, run `npm run seed` to seed data to your database so that you can test your routes.
-
-### Sync Sequelize to the Database on Server Start
-
-Create the code needed in `server.js` to sync the Sequelize models to the MySQL database on server start.
-
 ## Contributions
 
 The following were contributors to this project:
@@ -282,20 +275,3 @@ For questions about this project please contact me:
 - Email: nadiadorado@gmail.com
 - Github: https://github.com/ndorado3
 
-### Walkthrough Video: 37%
-
-- A walkthrough video that demonstrates the functionality of the e-commerce back end must be submitted, and a link to the video should be included in your readme file.
-
-- The walkthrough video must show all of the technical acceptance criteria being met.
-
-- The walkthrough video must demonstrate how to create the schema from the MySQL shell.
-
-- The walkthrough video must demonstrate how to seed the database from the command line.
-
-- The walkthrough video must demonstrate how to start the application’s server.
-
-- The walkthrough video must demonstrate GET routes for all categories, all products, and all tags being tested in Insomnia Core.
-
-- The walkthrough video must demonstrate GET routes for a single category, a single product, and a single tag being tested in Insomnia Core.
-
-- The walkthrough video must demonstrate POST, PUT, and DELETE routes for categories, products, and tags being tested in Insomnia Core.
